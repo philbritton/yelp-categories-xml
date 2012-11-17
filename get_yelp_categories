@@ -1,0 +1,1 @@
+curl https://raw.github.com/Yelp/yelp-api/master/category_lists/en/category.json > categories.json

@@ -1,0 +1,3 @@
+node index.js > output.xml
+xmllint --pretty 1 output.xml > categories.xml
+cat categories.xml
