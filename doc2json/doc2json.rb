@@ -5,11 +5,10 @@ require 'rubygems'
 require 'json'
 
 # http://rubular.com/r/8TDshX9TUW
-file = File.new("raw", "r")
+file = File.new("raw.txt", "r")
 
-parent_0 = {
-  :children => []
-}
+root = []
+count = 0
 while (line = file.gets)
   regexp = /([0-9]*\.)([0-9]*\.)?([0-9]*\.)?\s*(.*)\((\w*)/
   matches = line.match(regexp)
@@ -25,22 +24,33 @@ while (line = file.gets)
 
   # Set parent level
   me = {
-    :alias => tag,
-    :title => title,
-    :children => []
+    :children => [],
+    :ENG => {
+      :display => title,
+      :aliases => []
+    },
+    :ZHT => {
+      :display => "",
+      :aliases => []
+    },
   }
   # Add to data structure
   if level == 1
-    parent_0[:children] << me
+    me[:id] = "category::#{tag}"
+    root << me
     parent_1 = me
   elsif level == 2
+    me[:id] = parent_1[:id] + "::#{tag}"
     parent_1[:children] << me
     parent_2 = me
   elsif level == 3
+    me[:id] = parent_1[:id] + "::#{tag}"
     parent_2[:children] << me
     parent_3 = me
   end
+  count = count+1
 end
 file.close
 
-puts parent_0.to_json
+puts root.to_json
+puts count

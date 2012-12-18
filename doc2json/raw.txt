@@ -1,5 +1,4 @@
 1.	Active Life (active, All)
-1.1.	Active Life (active, All)
 1.2.	Amateur Sports Teams (amateursportsteams, All)
 1.3.	Amusement Parks (amusementparks, All)
 1.4.	Aquariums (aquariums, All)
@@ -10,7 +9,6 @@
 1.9.	Bowling (bowling, All)
 1.10.	Climbing (climbing, All)
 1.11.	Diving (diving, All)
-1.11.1.	Diving (diving, All)
 1.11.2.	Free Diving (freediving, All)
 1.11.3.	Scuba Diving (scuba, All)
 1.12.	Fishing (fishing, All)

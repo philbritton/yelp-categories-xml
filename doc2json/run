@@ -1,0 +1,1 @@
+ruby doc2json.rb | jsonlint > pretty.json
